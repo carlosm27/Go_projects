@@ -1,0 +1,36 @@
+
+  <div class = "container">
+    <div class = "text-center container">
+      <br>
+      <h2 class = "text-center">Search for your favorite fruit</h2>
+      <br>
+      <form method="GET">
+        <input type = "text" name = "name" placeholder="Search..." class = "text-center">
+        <button type = "submit" class = "btn-danger btn-sm">SEARCH FRUIT</button>
+      </form>
+    </div>
+    <br><br>
+    <div class="row">
+      {range. Response}
+        <div class="col-md-4 col-sm-6 col-lg-3">
+          <div class="card">
+            <img class="card-img-top" src="{{ meal.image_url }}" alt="Card image cap">
+            <div class="card-body text-center">
+              <p class="card-title">{{ .Name }}</p>
+              <hr>
+              <p class="card-text">{{range .Nutrition }}</p>
+              <a href="/meals/{{meal.id}}"
+              ><input
+                type="submit"
+                value="Learn More"
+                class="btn btn-danger btn-sm"
+                type="button"
+            /></a>
+            </div>
+          </div>
+          <br><br><br>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
