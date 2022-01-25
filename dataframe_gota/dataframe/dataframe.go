@@ -24,20 +24,6 @@ func main() {
 	if strings.HasSuffix(CsvName, ".csv") {
 		OpenCsvFile(CsvName)
 	}
-	fmt.Println("Enter the name of a file with .csv extension or anything else to end the program: ")
-
-	for strings.HasSuffix(CsvName, ".csv") {
-
-		input, err := reader.ReadString('\n')
-		if err != nil {
-			fmt.Println("An error occured while reading input. Please try again", err)
-			return
-		}
-		CsvName := strings.TrimSuffix(input,"\r\n")
-		OpenCsvFile(CsvName)
-		fmt.Println("Enter the name of a file with .csv extension or anything else to end the program: ")
-	}
-	fmt.Println("Bye!")
 
 
 }
