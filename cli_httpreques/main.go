@@ -16,7 +16,7 @@ func main() {
 	postCmd := flag.NewFlagSet("post", flag.ExitOnError)
 
 	postUrl := postCmd.String("url", "", "port of your localhost")
-	//postStringJson := postCmd.String("json", "", "map or json to post")
+	
 
 	reader := bufio.NewReader(os.Stdin)
 
